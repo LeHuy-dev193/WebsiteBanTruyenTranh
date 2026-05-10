@@ -1,0 +1,463 @@
+:root {
+    --primary-red: #ff0000;
+    --dark-bg: #111;
+    --text-white: #ffffff;
+    --gray-light: #f4f4f4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header & Nav */
+.header-top {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav {
+    background-color: var(--primary-red);
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+/* Hero Banner */
+.hero-banner {
+    background: radial-gradient(circle, #333, #000);
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 80px;
+    letter-spacing: 5px;
+}
+
+.btn-shop {
+    background: var(--primary-red);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Policies */
+.policies {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.policy-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.policy-item i {
+    font-size: 30px;
+}
+
+/* Category Cards */
+.categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 40px 0;
+}
+
+.cat-card {
+    background: #f9f9f9;
+    padding: 15px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.cat-card img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Recommendations Grid */
+.prod-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.prod-item {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    border: 1px solid #eee;
+}
+
+.tag {
+    display: block;
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+.best-seller { color: blue; }
+.famous { color: purple; }
+
+/* Footer */
+.main-footer {
+    background: #fff;
+    padding-top: 50px;
+    border-top: 2px solid #eee;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.copyright {
+    text-align: center;
+    padding: 20px;
+    background: #f4f4f4;
+    font-size: 12px;
+}
+
+/* Container chung cho phần đề xuất */
+.recommendations {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 20px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+/* Nút bấm phía trên */
+.filter-buttons {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.filter-buttons button {
+    border: none;
+    padding: 8px 20px;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btn-red { background-color: #ff0000; }
+.btn-black { background-color: #000; }
+
+/* Grid chia 3 cột đều nhau */
+.prod-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cột */
+    gap: 20px;
+    text-align: left;
+}
+
+/* Item sản phẩm */
+.prod-item {
+    display: flex; /* Để ảnh và text nằm ngang */
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee; /* Đường kẻ mờ như ảnh 2 */
+}
+
+.prod-img {
+    width: 100px;
+    height: 80px;
+    flex-shrink: 0; /* Không cho ảnh bị co lại */
+    margin-right: 15px;
+}
+
+.prod-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Giữ ảnh luôn đẹp trong khung */
+    background: #f4f4f4;
+}
+
+.prod-info h4 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.prod-info .price {
+    color: #ff0000;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Màu sắc các Tag bên dưới */
+.tag {
+    font-size: 12px;
+    font-weight: bold;
+    display: block;
+    margin-top: 4px;
+}
+.blue { color: #2d55ff; }
+.purple { color: #a333c8; }
+.green { color: #21ba45; }
+.orange { color: #f2711c; }
+.cyan { color: #00b5ad; }
+
+/* Container chứa 4 thẻ */
+.categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 40px 0;
+}
+
+/* Thẻ card bao ngoài */
+.cat-card {
+    background: #f9f9f9;
+    padding: 15px;
+    text-align: center;
+    display: flex; /* Sử dụng flexbox */
+    flex-direction: column; /* Sắp xếp theo chiều dọc */
+    justify-content: space-between; /* Đẩy chữ xuống đáy nếu cần */
+    height: 100%; /* Đảm bảo các card cao bằng nhau */
+}
+
+/* KHÓA CHỐT: Cố định chiều cao khung ảnh */
+.cat-img-box {
+    width: 100%;
+    height: 180px; /* Đặt chiều cao cố định cho khung chứa ảnh */
+    display: flex;
+    align-items: center; /* Căn ảnh ra giữa khung theo chiều dọc */
+    justify-content: center; /* Căn ảnh ra giữa khung theo chiều ngang */
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.cat-img-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Giúp ảnh không bị méo, tự co dãn trong khung 180px */
+}
+
+/* Định dạng chữ */
+.cat-card p {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    min-height: 40px; /* Đảm bảo nếu chữ dài 2 dòng vẫn không làm lệch hàng */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Căn giữa tiêu đề */
+.partners {
+    padding: 50px 0;
+    text-align: center; /* Căn giữa chữ ĐỐI TÁC - KHÁCH HÀNG */
+}
+
+.partners .section-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+/* Dàn hàng ngang các logo */
+.partner-logos {
+    display: flex;
+    justify-content: space-around; /* Giãn cách đều các logo */
+    align-items: center;           /* Căn giữa theo chiều dọc */
+    flex-wrap: wrap;               /* Tự xuống dòng nếu màn hình nhỏ */
+    gap: 20px;
+}
+
+/* Khống chế kích thước logo để không bị to nhỏ lệch nhau */
+.partner-logos img {
+    max-width: 120px;   /* Độ rộng tối đa của mỗi logo */
+    max-height: 60px;   /* Chiều cao tối đa */
+    height: auto;
+    filter: grayscale(100%); /* (Tùy chọn) Làm logo màu xám giống ảnh 2 */
+    opacity: 0.7;            /* (Tùy chọn) Làm mờ nhẹ */
+    transition: 0.3s;
+}
+
+/* Hiệu ứng khi di chuột vào logo hiện màu (nếu muốn) */
+.partner-logos img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Container chung để căn giữa nội dung */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.main-footer {
+    background-color: #fff; /* Màu nền trắng */
+    padding-top: 50px;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+/* --- 1. Phần hình ảnh Trao đổi --- */
+.footer-customer-interaction {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.interaction-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.interaction-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.interaction-images img {
+    width: 100%;
+    max-width: 350px; /* Độ rộng tối đa mỗi ảnh */
+    height: auto;
+    border-radius: 4px; /* Bo góc nhẹ */
+    object-fit: cover;
+}
+
+/* --- 2. Phần Grid các cột thông tin --- */
+.footer-links-grid {
+    display: grid;
+    /* Chia làm 5 cột, cột đầu tiên rộng hơn (2 phần) */
+    grid-template-columns: 2fr 1fr 1fr 1fr 1.2fr; 
+    gap: 30px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #eee; /* Đường kẻ mờ phía dưới */
+}
+
+.footer-col h3, 
+.footer-col h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.footer-col p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: #ff0000; /* Màu khi di chuột vào */
+}
+
+/* Định dạng riêng cho cột thông tin công ty */
+.company-info {
+    text-align: left;
+}
+
+/* --- 3. Phần Icon mạng xã hội có màu --- */
+.social-icons-colored {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons-colored a {
+    font-size: 20px;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.social-icons-colored a:hover {
+    transform: scale(1.1); /* Phóng to nhẹ khi hover */
+}
+
+/* Màu sắc cụ thể cho từng icon */
+.icon-ig i { color: #e1306c; } /* Instagram */
+.icon-fb i { color: #1877f2; } /* Facebook */
+.icon-tk i { color: #000000; } /* Tiktok */
+
+/* Định dạng cho icon Zalo (thường dùng ảnh img) */
+.icon-zl img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+/* --- 4. Thanh bản quyền dưới cùng --- */
+.copyright-bar {
+    background-color: #f4f4f4; /* Màu nền xám nhạt */
+    padding: 20px 0;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+}
