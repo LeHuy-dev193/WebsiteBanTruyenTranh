@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hina (雪 - Tuyết) Shop - Truyện Tranh & Light Novel</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<meta name="description"
+content="Hina Shop chuyên bán manga, light novel và artbook chính hãng">
+<meta property="og:title" content="Hina Shop">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "Hina Shop",
+  "url": "https://shophina.onrender.com/",
+  "description": "Website bán manga, light novel và artbook chính hãng"
+}
+</script>
+</head>
+<body>
+
+<!-- TOP BAR -->
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">陽菜</div>
+      <div class="logo-text">
+        <strong>Hina Shop</strong>
+        <small>Manga · Light Novel · Artbook</small>
+      </div>
+    </a>
+
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Tìm truyện, tác giả, thể loại..." />
+      <button><i class="fa fa-search"></i></button>
+    </div>
+
+    <div class="header-actions">
+      <button class="header-btn" onclick="openModal()">
+        <i class="fa-regular fa-user"></i>
+        <span>Tài khoản</span>
+      </button>
+      <button class="header-btn" onclick="openCart()" style="position:relative;">
+        <i class="fa-regular fa-heart"></i>
+        <span>Yêu thích</span>
+      </button>
+      <button class="header-btn" onclick="openCart()" style="position:relative;">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span>Giỏ hàng</span>
+        <div class="cart-badge" id="cartCount">0</div>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-item">
+      <a href="#" class="nav-link">
+        <i class="fa fa-bars"></i> Danh Mục <i class="fa fa-chevron-down"></i>
+      </a>
+      <div class="dropdown">
+        <div class="dropdown-grid">
+          <div class="dropdown-group">
+            <h4>Truyện Chữ</h4>
+            <a href="javascript:void(0)" onclick="filterByCategory('Hàn Quốc')">Hàn Quốc</a>
+            <a href="javascript:void(0)" onclick="filterByCategory('Nhật Bản')">Nhật Bản</a>
+            <a href="javascript:void(0)" onclick="filterByCategory('Phương Tây')">Phương Tây</a>
+            <a href="javascript:void(0)" onclick="filterByCategory('Trung Quốc')">Trung Quốc</a>
+            <a href="javascript:void(0)" onclick="filterByCategory('Việt Nam')">Việt Nam</a>
+          </div>
+          <div class="dropdown-group">
+            <h4>Truyện Tranh</h4>
+            <a href="javascript:void(0)" onclick="filterByCategory('Manga Nhật Bản')">Manga Nhật Bản</a>
+            <a href="javascript:void(0)" onclick="filterByCategory('Manhwa Hàn Quốc')">Manhwa Hàn Quốc</a>
+            <a href="javascript:void(0)" onclick="filterByCategory('Manhua Trung Quốc')">Manhua Trung Quốc</a>
+            <a href="javascript:void(0)" onclick="filterByCategory('Comic Phương Tây')">Comic Phương Tây</a>
+            <a href="javascript:void(0)" onclick="filterByCategory('Truyện Việt Nam')">Truyện Việt Nam</a>
+          </div>
+          <div class="dropdown-group">
+            <h4>Thể Loại</h4>
+            <a href="javascript:void(0)" onclick="filterByCategory('Trinh Thám - Kinh Dị')">Trinh Thám - Kinh Dị</a>
+            <a href="javascript:void(0)" onclick="filterByCategory('Hành Động - Phiêu Lưu')">Hành Động - Phiêu Lưu</a>
+            <a href="javascript:void(0)" onclick="filterByCategory('Tình Cảm - Lãng Mạn')">Tình Cảm - Lãng Mạn</a>
+            <a href="javascript:void(0)" onclick="filterByCategory('Artbook')">Artbook</a>
+            <a href="javascript:void(0)" onclick="filterByCategory('Trọn Bộ')">Trọn Bộ</a>
+          </div>
+          <div class="dropdown-group">
+            <h4>Vật Phẩm</h4>
+            <a href="javascript:void(0)" onclick="filterByCategory('Lịch')">Lịch</a>
+            <a href="javascript:void(0)" onclick="filterByCategory('Móc Khóa')">Móc Khóa</a>
+            <a href="javascript:void(0)" onclick="filterByCategory('Thẻ Bài')">Thẻ Bài</a>
+            <a href="javascript:void(0)" onclick="filterByCategory('Poster')">Poster</a>
+            <a href="javascript:void(0)" onclick="filterByCategory('Quà Tặng Khác')">Quà Tặng Khác</a>
+          </div>
+        </div> </div> </div> <a href="javascript:void(0)" onclick="showPageView('lich-phat-hanh')" class="nav-link">Lịch Phát Hành</a>
+        <a href="javascript:void(0)" onclick="showPageView('thanh-vien')" class="nav-link">Thành Viên</a>
+    <a href="javascript:void(0)" onclick="showPageView('doi-diem')" class="nav-link">Đổi Điểm</a>
+    <a href="javascript:void(0)" onclick="showPageView('tin-tuc')" class="nav-link">Tin Tức</a>
+    <a href="javascript:void(0)" onclick="showPageView('huong-dan')" class="nav-link">Hướng Dẫn</a>
+    <a href="javascript:void(0)" onclick="showPageView('ve-chung-toi')" class="nav-link">Về Chúng Tôi</a>
+      <a href="https://stu-nghia.info/Demo_DH52102716/labs.html" target="_blank" class="nav-link">Lab Thực Hành</a>
+  </div> </nav>
+
+<div id="homeView">
+
+<!-- HERO SLIDER -->
+<div class="hero">
+  <div class="slides" id="slidesContainer">
+    <div class="slide active">
+      <div class="slide-bg" style="background-image: url('https://cdn.hstatic.net/products/1000376556/beastars_tap_13_bia_9f6b903181d448f284b25073e765e1fd_medium.jpg')"></div>
+      <div class="slide-content">
+        <div class="slide-text">
+          <span class="slide-badge">ĐẶT TRƯỚC NGAY</span>
+          <h1>BEASTARS<br>Trọn Bộ</h1>
+          <p>Bộ manga đặc sắc về thế giới loài vật<br>với những câu chuyện đầy cảm xúc</p>
+          <a href="#" class="slide-btn"><i class="fa fa-shopping-bag"></i> Đặt Trước Ngay</a>
+          <a href="#" class="slide-btn outline">Xem Chi Tiết</a>
+        </div>
+        <div class="slide-book">
+          <img src="https://cdn.hstatic.net/products/1000376556/beastars_tap_13_bia_9f6b903181d448f284b25073e765e1fd_medium.jpg" alt="BEASTARS">
+        </div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-bg" style="background-image: url('https://cdn.hstatic.net/products/1000376556/frieren_phap_su_tien_tang_tap_13_ban_thuong_bia_76aa082d1db6408fbc70945cbc0ab664_medium.jpg')"></div>
+      <div class="slide-content">
+        <div class="slide-text">
+          <span class="slide-badge">MỚI PHÁT HÀNH</span>
+          <h1>Frieren<br>Pháp Sư Tiễn Táng</h1>
+          <p>Hành trình của pháp sư bất tử<br>qua những miền đất kỳ ảo</p>
+          <a href="#" class="slide-btn"><i class="fa fa-shopping-bag"></i> Mua Ngay</a>
+          <a href="#" class="slide-btn outline">Xem Chi Tiết</a>
+        </div>
+        <div class="slide-book">
+          <img src="https://cdn.hstatic.net/products/1000376556/frieren_phap_su_tien_tang_tap_13_ban_thuong_bia_76aa082d1db6408fbc70945cbc0ab664_medium.jpg" alt="Frieren">
+        </div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-bg" style="background-image: url('https://cdn.hstatic.net/products/1000376556/kagurabachi_5_59bbd536d0fb43198d94c564df68c79c_medium.jpg')"></div>
+      <div class="slide-content">
+        <div class="slide-text">
+          <span class="slide-badge">HOT TREND 2025</span>
+          <h1>Kagurabachi<br>Tập 5</h1>
+          <p>Điên Cuồng - Hành trình trả thù<br>của chàng trai mang linh kiếm</p>
+          <a href="#" class="slide-btn"><i class="fa fa-shopping-bag"></i> Mua Ngay</a>
+          <a href="#" class="slide-btn outline">Xem Thêm</a>
+        </div>
+        <div class="slide-book">
+          <img src="https://cdn.hstatic.net/products/1000376556/kagurabachi_5_59bbd536d0fb43198d94c564df68c79c_medium.jpg" alt="Kagurabachi">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="slide-nav prev" onclick="changeSlide(-1)"><i class="fa fa-chevron-left"></i></button>
+  <button class="slide-nav next" onclick="changeSlide(1)"><i class="fa fa-chevron-right"></i></button>
+
+  <div class="slide-dots" id="dots">
+    <div class="dot active" onclick="goSlide(0)"></div>
+    <div class="dot" onclick="goSlide(1)"></div>
+    <div class="dot" onclick="goSlide(2)"></div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-num">3000+</span>
+      <span class="stat-label">Đầu Manga & Light Novel</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">999+</span>
+      <span class="stat-label">Khách Hàng Thân Thiết</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">300+</span>
+      <span class="stat-label">Light Novel Chọn Lọc</span>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<div class="features">
+  <div class="features-inner">
+    <div class="feature-item">
+      <div class="feature-icon"><i class="fa fa-truck"></i></div>
+      <div class="feature-text">
+        <h4>Giao Hàng Tận Nơi</h4>
+        <p>Dù bạn ở bất cứ đâu, chúng tôi sẽ giao đến tận tay</p>
+      </div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon"><i class="fa fa-heart"></i></div>
+      <div class="feature-text">
+        <h4>Phục Vụ Tận Tình</h4>
+        <p>Niềm vui của bạn là hạnh phúc của </p>
+      </div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon"><i class="fa fa-shield"></i></div>
+      <div class="feature-text">
+        <h4>Chất Lượng Chính Hãng</h4>
+        <p>Hàng hóa chính hãng 100%, nguồn gốc rõ ràng</p>
+      </div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon"><i class="fa fa-star"></i></div>
+      <div class="feature-text">
+        <h4>Bán Hàng Vì Đam Mê</h4>
+        <p>Bán hàng bằng cả trái tim, vì cộng đồng manga Việt</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NEW THIS WEEK -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-title">
+      <h2>Mới Nhất Trong Tuần</h2>
+      <p>Cùng khám phá những đầu sách mới nhất vừa về kho</p>
+    </div>
+    <a href="#" class="view-all">Xem tất cả <i class="fa fa-arrow-right"></i></a>
+  </div>
+  <div class="product-grid" id="newProductsGrid"></div>
+</div>
+
+<!-- PROMO BANNER -->
+<div class="promo-banner">
+  <div class="promo-inner">
+    <div class="promo-text">
+      <h2>Khám Phá Thế Giới<br><em>Manga & Light Novel</em></h2>
+      <p>Từ truyện tranh Nhật Bản, Hàn Quốc đến tiểu thuyết nhẹ — Hina 雪 Shop là điểm đến hoàn hảo cho mọi tín đồ đam mê truyện.</p>
+      <a href="#" class="slide-btn"><i class="fa fa-book-open"></i> Xem Tất Cả Sách</a>
+    </div>
+    <div class="promo-cats">
+      <a href="#" class="promo-cat">
+        <i class="fa fa-book"></i>
+        <span>Truyện Chữ</span>
+        <small>Light Novel</small>
+      </a>
+      <a href="#" class="promo-cat">
+        <i class="fa fa-image"></i>
+        <span>Truyện Tranh</span>
+        <small>Manga · Manhwa</small>
+      </a>
+      <a href="#" class="promo-cat">
+        <i class="fa fa-palette"></i>
+        <span>Artbook</span>
+        <small>Illustration</small>
+      </a>
+      <a href="#" class="promo-cat">
+        <i class="fa fa-gift"></i>
+        <span>Vật Phẩm</span>
+        <small>Merchandise</small>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- COMING SOON -->
+<div class="section" style="padding-top: 60px;">
+  <div class="section-header">
+    <div class="section-title">
+      <h2>Sắp Phát Hành</h2>
+      <p>Đặt trước ngay để nhận ưu đãi sớm nhất</p>
+    </div>
+    <a href="#" class="view-all">Xem tất cả <i class="fa fa-arrow-right"></i></a>
+  </div>
+  <div class="product-grid" id="comingGrid"></div>
+</div>
+
+<!-- SALE SECTION -->
+<div class="section" style="padding-top: 0;">
+  <div class="section-header">
+    <div class="section-title">
+      <h2>Khuyến Mãi Hot</h2>
+      <p>Nhanh tay chọn những sản phẩm đang giảm giá</p>
+    </div>
+    <a href="javascript:void(0)" onclick="filterByCategory('Khuyến Mãi Hot')" class="view-all">
+      Xem tất cả <i class="fa fa-arrow-right"></i>
+    </a>
+  </div>
+  <div class="product-grid" id="saleGrid"></div>
+</div>
+
+</div> <div id="categoryView" style="display: none; min-height: 600px; padding-bottom: 60px;">
+  <div class="section">
+    <div class="section-header" style="border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 30px;">
+      <div class="section-title">
+        <h2 id="categoryTitle" style="color: blue;">Tên Danh Mục</h2>
+        <p>Khám phá các tựa sách đặc sắc nổi bật được cập nhật liên tục</p>
+      </div>
+      <a href="javascript:void(0)" onclick="showHomeView()" class="view-all" style="color: #555;">
+        <i class="fa fa-arrow-left"></i> Quay lại trang chủ
+      </a>
+    </div>
+    
+    <div class="product-grid" id="categoryProductsGrid"></div>
+  </div>
+</div>
+<!---->
+<div id="pageView" class="section" style="display: none; min-height: 600px; padding-top: 40px; padding-bottom: 60px;">
+  <div style="max-width: 1200px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #c0392b; padding-bottom: 15px; margin-bottom: 30px;">
+      <h2 id="pageTitle" style="color: #c0392b; margin: 0; font-family: 'Noto Serif JP', serif;">Tiêu Đề Trang</h2>
+      <a href="javascript:void(0)" onclick="showHomeViewAll()" class="view-all" style="color: #555; text-decoration: none; font-weight: 600;">
+        <i class="fa fa-arrow-left"></i> Quay lại trang chủ
+      </a>
+    </div>
+    <div id="pageContent" style="line-height: 1.8; color: #333; font-size: 15px;"></div>
+  </div>
+</div>
+<!-- PARTNERS -->
+<div class="partners">
+  <div class="partners-inner">
+    <h3>Nhà Xuất Bản & Đối Tác</h3>
+    <div class="partners-logos">
+      <a href="#" class="partner-logo">
+        <div class="partner-logo-icon">金</div>
+        <span>Kim Đồng</span>
+      </a>
+      <a href="#" class="partner-logo">
+        <div class="partner-logo-icon">童</div>
+        <span>NXB Trẻ</span>
+      </a>
+      <a href="#" class="partner-logo">
+        <div class="partner-logo-icon">AM</div>
+        <span>Amak Books</span>
+      </a>
+      <a href="#" class="partner-logo">
+        <div class="partner-logo-icon">光</div>
+        <span>Hikari LN</span>
+      </a>
+      <a href="#" class="partner-logo">
+        <div class="partner-logo-icon">雅</div>
+        <span>Nhã Nam</span>
+      </a>
+      <a href="#" class="partner-logo">
+        <div class="partner-logo-icon">漫</div>
+        <span>Manga</span>
+      </a>
+      <a href="#" class="partner-logo">
+        <div class="partner-logo-icon">IPM</div>
+        <span>IPM</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- DELIVERY -->
+<div class="delivery">
+  <div class="delivery-inner">
+    <div class="section-header" style="margin-bottom: 0;">
+      <div class="section-title">
+        <h2>Đối Tác Vận Chuyển</h2>
+        <p>Giao hàng nhanh chóng, đáng tin cậy trên toàn quốc</p>
+      </div>
+    </div>
+    <div class="delivery-partners">
+      <div class="delivery-card">
+        <div class="delivery-logo-box">VNPOST</div>
+        <div class="delivery-info">
+          <h4>VN Post</h4>
+          <p>Giao hàng đến 63 tỉnh thành. Đối tác vận chuyển chính thức của Hina Shop trên toàn quốc.</p>
+        </div>
+      </div>
+      <div class="delivery-card">
+        <div class="delivery-logo-box">GRAB</div>
+        <div class="delivery-info">
+          <h4>Grab Express</h4>
+          <p>Giao hàng trong ngày tại TP. Hồ Chí Minh và các thành phố lớn.</p>
+        </div>
+      </div>
+      <div class="delivery-card">
+        <div class="delivery-logo-box">GHN</div>
+        <div class="delivery-info">
+          <h4>Giao Hàng Nhanh</h4>
+          <p>Đơn vị giao nhận hàng đầu Việt Nam, chuyên phục vụ thương mại điện tử.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!---->
+<section class="faq-section">
+  <div class="faq-container">
+
+    <h2 class="faq-title">
+      Câu Hỏi Thường Gặp
+    </h2>
+
+    <div class="faq-item">
+      <h3>Hina Shop có bán manga chính hãng không?</h3>
+      <p>
+        Có. Tất cả manga và light novel tại Hina Shop đều là hàng chính hãng.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Shop có giao hàng toàn quốc không?</h3>
+      <p>
+        Hina Shop hỗ trợ giao hàng toàn quốc.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Thời gian giao hàng bao lâu?</h3>
+      <p>
+        Thời gian giao hàng từ 2-5 ngày tùy khu vực.
+      </p>
+    </div>
+
+  </div>
+</section>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#" class="footer-logo">
+        <div class="footer-logo-icon">陽菜</div>
+        <strong>Hina Shop</strong>
+      </a>
+      <p>Hina Shop — Điểm đến của những người yêu truyện. Chúng tôi mang đến những bộ manga, light novel và artbook chất lượng nhất từ Nhật Bản, Hàn Quốc và khắp thế giới.</p>
+      <address>
+        <div><i class="fa fa-location-dot"></i> 13/17 Phạm Văn Đồng, Phường Tân Lập, Tỉnh Đắk Lắk, TP.Buôn Mê Thuột</div>
+        <div><i class="fa fa-phone"></i> 033 123 19 03</div>
+        <div><i class="fa fa-envelope"></i> cskh.Hina.vn@gmail.com</div>
+      </address>
+      <div class="social-links" style="margin-top: 16px;">
+        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Danh Mục</h5>
+      <a href="#">Truyện Chữ Hàn Quốc</a>
+      <a href="#">Truyện Chữ Nhật Bản</a>
+      <a href="#">Manga Nhật Bản</a>
+      <a href="#">Manhwa Hàn Quốc</a>
+      <a href="#">Artbook</a>
+      <a href="#">Vật Phẩm & Quà Tặng</a>
+    </div>
+    <div class="footer-col">
+      <h5>Chính Sách</h5>
+      <a href="#">Điều Khoản Sử Dụng</a>
+      <a href="#">Chính Sách Thanh Toán</a>
+      <a href="#">Chính Sách Bảo Mật</a>
+      <a href="#">Chính Sách Giao Hàng</a>
+      <a href="#">Chính Sách Đổi Trả</a>
+      <a href="#">Hướng Dẫn Mua Hàng</a>
+    </div>
+    <div class="footer-col">
+      <h5>Nhận Tin Mới Nhất</h5>
+      <p style="font-size: 13px; margin-bottom: 12px; color: rgba(255,255,255,0.6);">Đăng ký để nhận thông tin về sách mới và ưu đãi độc quyền.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Email của bạn...">
+        <button>Đăng Ký</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Hina Shop. Thiết kế với ♥ vì cộng đồng manga Việt Nam.</span>
+    <div class="payment-methods">
+      <span class="payment-icon">COD</span>
+      <span class="payment-icon">VISA</span>
+      <span class="payment-icon">ATM</span>
+      <span class="payment-icon">MOMO</span>
+      <span class="payment-icon">VNPAY</span>
+    </div>
+  </div>
+</footer>
+
+<!-- NOTIFICATION -->
+<div class="notification" id="notification">
+  <i class="fa fa-check-circle"></i>
+  <span id="notifText">Đã thêm vào giỏ hàng!</span>
+</div>
+
+<!-- CART SIDEBAR -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h3>Giỏ Hàng</h3>
+    <button class="cart-close" onclick="closeCart()"><i class="fa fa-times"></i></button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">
+      <i class="fa-regular fa-bag-shopping"></i>
+      <p>Giỏ hàng của bạn đang trống</p>
+    </div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>Tổng cộng</span>
+      <strong id="cartTotal">0₫</strong>
+    </div>
+    <button class="checkout-btn" onclick="checkout()">
+      <i class="fa fa-lock"></i> Thanh Toán Ngay
+    </button>
+  </div>
+</div>
+
+<!-- AUTH MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOnOverlay(event)">
+  <div class="modal">
+    <div class="modal-tabs">
+      <div class="modal-tab active" onclick="switchTab('login')">Đăng Nhập</div>
+      <div class="modal-tab" onclick="switchTab('register')">Đăng Ký</div>
+    </div>
+    <div class="modal-body" id="modalBody">
+      <h2 class="modal-title">Chào mừng trở lại!</h2>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="loginEmail" placeholder="email@example.com">
+      </div>
+      <div class="form-group">
+        <label>Mật Khẩu</label>
+        <input type="password" id="loginPassword" placeholder="••••••••">
+      </div>
+      <button class="modal-submit" onclick="handleLogin()">Đăng Nhập</button>
+      <p class="modal-footer-text">Chưa có tài khoản? <a href="#" onclick="switchTab('register')">Đăng ký ngay</a></p>
+    </div>
+  </div>
+</div>
+<!-- SCROLL TOP -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fa fa-arrow-up"></i>
+</button>
+
+<script>
+// ===== DATA =====
+// ===== DATA (ĐÃ CẬP NHẬT ĐẦY ĐỦ CATEGORY CHO TỪNG SẢN PHẨM) =====
+const newProducts = [
+  { id: 1, title: "Pháo Hoa, Đáy Nước và Lời Nói Dối Của Cậu", price: 139040, original: 158000, img: "https://cdn.hstatic.net/products/1000376556/b_a_1_ph_o_hoa_dca9505e7c3b4710b8bba2eacf84ef8b_medium.jpg", badge: "new", category: "Nhật Bản" },
+  { id: 2, title: "Anh Em Nhà Motohashi Tập 5", price: 76630, original: 79000, img: "https://cdn.hstatic.net/products/1000376556/b_a_motohashi_5.1_bc9005a6b7024bc3ad6bd0ae3fb2ec97_master_e01429c1fc56427196f34ec22b150b69_medium.png", badge: "", category: "Manga Nhật Bản" },
+  { id: 3, title: "Vị Hôn Thê Giản Dị Của Tôi Tập 2", price: 148720, original: 169000, img: "https://cdn.hstatic.net/products/1000376556/anh2_2966a25b78404866900360f7f04846f4_master_c63f2a2ca690484bb31f79d5f956cdd0_medium.png", badge: "new", category: "Nhật Bản" },
+  { id: 4, title: "Ba, Chú Gorilla Và Tôi - Tập 1", price: 85360, original: 88000, img: "https://cdn.hstatic.net/products/1000376556/e_2_-_ba__ch__gorilla_v__t_i_1_c6a9807caf7243029a10e7e67a763483_master_770be27eab414dd4aa5a248c5fefe293_medium.png", badge: "new", category: "Manga Nhật Bản" },
+  { id: 5, title: "Ánh Đèn Kì Ảo Của Nữ Thần Bóng Đêm Tập 4", price: 119310, original: 123000, img: "https://cdn.hstatic.net/products/1000376556/n_k___o_c_a_n__th_n_b_ng_d_m_4_133529b28c1247cc896cf814c53b65f8_master_152fa2ffa2f543909d942a7866b053a1_medium.png", badge: "", category: "Tình Cảm - Lãng Mạn" },
+  { id: 6, title: "BEASTARS - Tập 13", price: 33950, original: 35000, img: "https://cdn.hstatic.net/products/1000376556/beastars_tap_13_bia_9f6b903181d448f284b25073e765e1fd_medium.jpg", badge: "", category: "Manga Nhật Bản" },
+  { id: 7, title: "Kagurabachi Tập 5 - Điên Cuồng", price: 58200, original: 60000, img: "https://cdn.hstatic.net/products/1000376556/kagurabachi_5_59bbd536d0fb43198d94c564df68c79c_medium.jpg", badge: "new", category: "Manga Nhật Bản" },
+  { id: 8, title: "Gachiakuta - Combo Tập 1-12", price: 523800, original: 540000, img: "https://cdn.hstatic.net/products/1000376556/gachiakuta_tron_bo_85ea5d28863a4d7999a0105f631ccfa0_medium.jpg", badge: "", category: "Trọn Bộ" },
+  { id: 9, title: "Dan Da Dan - Tập 2", price: 43650, original: 45000, img: "https://cdn.hstatic.net/products/1000376556/dan_da_dan_tap_2_bia_e119861cbba74e14851877d434e75f58_medium.jpg", badge: "new", category: "Hành Động - Phiêu Lưu" },
+  { id: 10, title: "Hell Mode Tập 07", price: 53350, original: 55000, img: "https://cdn.hstatic.net/products/1000376556/hellmodemanga7_da8b4d2ee99c42a9af656b48285b43de_medium.jpg", badge: "", category: "Nhật Bản" },
+  { id: 11, title: "Frieren - Pháp Sư Tiễn Táng - Tập 13", price: 45000, original: null, img: "https://cdn.hstatic.net/products/1000376556/frieren_phap_su_tien_tang_tap_13_ban_thuong_bia_76aa082d1db6408fbc70945cbc0ab664_medium.jpg", badge: "new", category: "Manga Nhật Bản" },
+  { id: 12, title: "One Piece Party - Tập 7", price: 29100, original: 30000, img: "https://cdn.hstatic.net/products/1000376556/one_piece_party_bia_tap_7_04be8f3112794b7da041f9f24ddcc707_medium.jpg", badge: "", category: "Manga Nhật Bản" }
+];
+
+const comingProducts = [
+  { id: 101, title: "Hành Trình Của Elaina Tập 17", price: 148720, original: 169000, img: "https://cdn.hstatic.net/products/1000376556/elaina_17_-_bia_sach__1__569eab6a76b34f6d824a9b3d27cb4940_medium.png", badge: "coming", category: "Nhật Bản" },
+  { id: 102, title: "Blue Box - Tập 13: Sẵn Sàng Thử Thách", price: 38800, original: 40000, img: "https://cdn.hstatic.net/products/1000376556/bluebox_tap_13_bia_28b823c4f0f04d699ea09ae093f02340_medium.jpg", badge: "coming", category: "Tình Cảm - Lãng Mạn" },
+  { id: 103, title: "Hoa Thơm Kiêu Hãnh Tập 20", price: 53350, original: 55000, img: "https://cdn.hstatic.net/products/1000376556/nxbtre_thumb_04422026_094201_b39a87f43656440183e1d4d7b503f2aa_medium.jpg", badge: "coming", category: "Manga Nhật Bản" },
+  { id: 104, title: "Nữ Binh Thần Tốc Tập 15", price: 43650, original: 45000, img: "https://cdn.hstatic.net/products/1000376556/nxbtre_thumb_04332026_103309_af40426c5bc44421a994fcc6af62ed68_medium.jpg", badge: "coming", category: "Manga Nhật Bản" },
+  { id: 105, title: "Lam Hỏa Diệt Quỷ - Tập 31", price: 24250, original: 25000, img: "https://cdn.hstatic.net/products/1000376556/lam_hoa_diet_quy_tap_31_bia_27ca9c387ff046b3856711a203e76453_medium.jpg", badge: "coming", category: "Manga Nhật Bản" },
+  { id: 106, title: "Dấu Ấn Hoàng Gia - Tập 56", price: 29100, original: 30000, img: "https://cdn.hstatic.net/products/1000376556/dau_an_hoang_gia_tap_56_bia_f598ac6ff9234dfdb248f35e9cf5379b_medium.jpg", badge: "coming", category: "Manga Nhật Bản" }
+];
+
+const saleProducts = [
+  { id: 201, title: "[Boxset] Nhà Trọ Của Những Điều Đã Mất (3 Cuốn)", price: 90000, original: 120000, img: "https://product.hstatic.net/1000376556/product/nha_tro_cua_nhung_dieu_da_mat_-mockup__3__1664d52db41344b781601f79d70af9fd_medium.jpg", badge: "", category: "Trọn Bộ" },
+  { id: 202, title: "Anime Comics: One Piece Film Strong World (2 Tập)", price: 154000, original: 200000, img: "https://product.hstatic.net/1000376556/product/one_piece_film_strong_world_-_2_cuon_dd6e833fa1904dcfb1ac5514b100ed19_medium.jpg", badge: "", category: "Manga Nhật Bản" },
+  { id: 203, title: "Boxset Olga - Cô Con Gái Của Rạp Xiếc (3 Cuốn)", price: 130950, original: 135000, img: "https://product.hstatic.net/1000376556/product/olga_co_be_lon_len_trong_rap_xiec_boxset_kem_bookmark_884f7c4c8e1b4d8f87aa89b6435804b3_medium.jpg", badge: "", category: "Trọn Bộ" },
+  { id: 204, title: "Chú Thuật Hồi Chiến Tập 2", price: 29100, original: 30000, img: "https://product.hstatic.net/1000376556/product/2_9e447f0f4526428c85f250f8dca591_51b1f515a62747c4855cc51201548125_medium.jpg", badge: "", category: "Manga Nhật Bản" },
+  { id: 205, title: "Dạo Bước Phố Đêm", price: 98000, original: 130000, img: "https://product.hstatic.net/1000376556/product/dao_buoc_pho_dem_b5e5bda063854852961b2cc7a4dc413e_medium.jpg", badge: "", category: "Nhật Bản" },
+  { id: 206, title: "Xa Lộ Chim Cánh Cụt", price: 105600, original: 120000, img: "https://product.hstatic.net/1000376556/product/xa_lo_chim_canh_cut_398487562d894a7d8f39e355aa961b30_medium.jpg", badge: "", category: "Nhật Bản" }
+];
+// ===== CART STATE =====
+let cart = [];
+
+function formatPrice(n) {
+  return n.toLocaleString('vi-VN') + '₫';
+}
+
+function calcDiscount(p, o) {
+  if (!o) return 0;
+  return Math.round((1 - p/o) * 100);
+}
+
+function renderCard(p) {
+  const disc = calcDiscount(p.price, p.original);
+  const badgeMap = { new: 'Mới', coming: 'Sắp Ra', '': '' };
+  return `
+    <div class="product-card">
+      <div class="card-image">
+        ${p.badge ? `<div class="card-badge ${p.badge}">${badgeMap[p.badge]}</div>` : ''}
+        ${disc > 0 ? `<div class="card-badge" style="top:auto;bottom:8px;background:#E67E22;">-${disc}%</div>` : ''}
+        <img src="${p.img}" alt="${p.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/200x280/f5efe6/8C7B6B?text=📖'">
+        <div class="card-actions">
+          <button class="add-to-cart" onclick="addToCart(${p.id}, '${p.title.replace(/'/g,"\\'")}', ${p.price}, '${p.img}')">
+            <i class="fa fa-bag-shopping"></i> Thêm Vào Giỏ
+          </button>
+        </div>
+      </div>
+      <div class="card-info">
+        <h3>${p.title}</h3>
+        <div class="card-price">
+          <span class="price-sale">${formatPrice(p.price)}</span>
+          ${p.original ? `<span class="price-original">${formatPrice(p.original)}</span>` : ''}
+          ${disc > 0 ? `<span class="price-discount">-${disc}%</span>` : ''}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// Render products
+document.getElementById('newProductsGrid').innerHTML = newProducts.map(renderCard).join('');
+document.getElementById('comingGrid').innerHTML = comingProducts.map(renderCard).join('');
+document.getElementById('saleGrid').innerHTML = saleProducts.map(renderCard).join('');
+
+// ===== CART =====
+function addToCart(id, title, price, img) {
+  const existing = cart.find(i => i.id === id);
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({ id, title, price, img, qty: 1 });
+  }
+  updateCartUI();
+  showNotification(`"${title.slice(0,30)}..." đã được thêm!`);
+}
+
+function removeFromCart(id) {
+  cart = cart.filter(i => i.id !== id);
+  updateCartUI();
+}
+
+function changeQty(id, delta) {
+  const item = cart.find(i => i.id === id);
+  if (!item) return;
+  item.qty += delta;
+  if (item.qty <= 0) removeFromCart(id);
+  else updateCartUI();
+}
+
+function updateCartUI() {
+  const count = cart.reduce((a, i) => a + i.qty, 0);
+  const total = cart.reduce((a, i) => a + i.price * i.qty, 0);
+  document.getElementById('cartCount').textContent = count;
+  document.getElementById('cartTotal').textContent = formatPrice(total);
+
+  const container = document.getElementById('cartItems');
+  if (cart.length === 0) {
+    container.innerHTML = `<div class="cart-empty"><i class="fa-regular fa-bag-shopping"></i><p>Giỏ hàng của bạn đang trống</p></div>`;
+    return;
+  }
+  container.innerHTML = cart.map(item => `
+    <div class="cart-item">
+      <img src="${item.img}" alt="${item.title}" onerror="this.src='https://via.placeholder.com/56x78/f5efe6/8C7B6B?text=📖'">
+      <div class="cart-item-info">
+        <h4>${item.title}</h4>
+        <div class="cart-item-price">${formatPrice(item.price)}</div>
+        <div class="cart-item-qty">
+          <button class="qty-btn" onclick="changeQty(${item.id}, -1)">−</button>
+          <span class="qty-num">${item.qty}</span>
+          <button class="qty-btn" onclick="changeQty(${item.id}, 1)">+</button>
+        </div>
+      </div>
+      <button class="cart-remove" onclick="removeFromCart(${item.id})"><i class="fa fa-trash"></i></button>
+    </div>
+  `).join('');
+}
+
+function openCart() {
+  document.getElementById('cartSidebar').classList.add('open');
+  document.getElementById('cartOverlay').classList.add('open');
+}
+
+function closeCart() {
+  document.getElementById('cartSidebar').classList.remove('open');
+  document.getElementById('cartOverlay').classList.remove('open');
+}
+
+function checkout() {
+  if (cart.length === 0) { showNotification('Giỏ hàng đang trống!'); return; }
+  showNotification('Đang chuyển đến trang thanh toán...');
+  setTimeout(() => { closeCart(); }, 1000);
+}
+
+// ===== NOTIFICATION =====
+let notifTimer;
+function showNotification(text) {
+  const el = document.getElementById('notification');
+  document.getElementById('notifText').textContent = text;
+  el.classList.add('show');
+  clearTimeout(notifTimer);
+  notifTimer = setTimeout(() => el.classList.remove('show'), 3000);
+}
+
+// ===== SLIDER =====
+let currentSlide = 0;
+const totalSlides = 3;
+let slideInterval;
+
+function goSlide(n) {
+  currentSlide = n;
+  document.getElementById('slidesContainer').style.transform = `translateX(-${n * 100}%)`;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === n));
+  document.querySelectorAll('.slide').forEach((s, i) => s.classList.toggle('active', i === n));
+}
+
+function changeSlide(dir) {
+  currentSlide = (currentSlide + dir + totalSlides) % totalSlides;
+  goSlide(currentSlide);
+  resetInterval();
+}
+
+function resetInterval() {
+  clearInterval(slideInterval);
+  slideInterval = setInterval(() => changeSlide(1), 5000);
+}
+
+resetInterval();
+
+// ===== MODAL =====
+function openModal() {
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function closeModalOnOverlay(e) {
+  if (e.target === document.getElementById('modalOverlay')) {
+    document.getElementById('modalOverlay').classList.remove('open');
+  }
+}
+
+function switchTab(tab) {
+  document.querySelectorAll('.modal-tab').forEach((t, i) => {
+    t.classList.toggle('active', (tab === 'login' && i === 0) || (tab === 'register' && i === 1));
+  });
+  const body = document.getElementById('modalBody');
+  if (tab === 'login') {
+    body.innerHTML = `
+      <h2 class="modal-title">Chào mừng trở lại!</h2>
+      <div class="form-group"><label>Email</label><input type="email" id="loginEmail" placeholder="email@example.com"></div>
+      <div class="form-group"><label>Mật Khẩu</label><input type="password" id="loginPassword" placeholder="••••••••"></div>
+      <button class="modal-submit" onclick="handleLogin()">Đăng Nhập</button>
+      <p class="modal-footer-text">Chưa có tài khoản? <a href="#" onclick="switchTab('register')">Đăng ký ngay</a></p>
+    `;
+  } else {
+    body.innerHTML = `
+      <h2 class="modal-title">Tạo tài khoản mới</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div class="form-group"><label>Họ</label><input type="text" id="regHo" placeholder="Nguyễn"></div>
+        <div class="form-group"><label>Tên</label><input type="text" id="regTen" placeholder="Văn A"></div>
+      </div>
+      <div class="form-group"><label>Email</label><input type="email" id="regEmail" placeholder="email@example.com"></div>
+      <div class="form-group"><label>Mật Khẩu</label><input type="password" id="regPassword" placeholder="••••••••"></div>
+      <button class="modal-submit" onclick="handleRegister()">Đăng Ký</button>
+      <p class="modal-footer-text">Đã có tài khoản? <a href="#" onclick="switchTab('login')">Đăng nhập</a></p>
+    `;
+  }
+}
+
+// Khởi tạo danh sách tài khoản từ localStorage (nếu có), hoặc mảng rỗng nếu chưa ai đăng ký
+let danhSachTaiKhoan = JSON.parse(localStorage.getItem('hinaShopAccounts')) || [];
+
+// 1. XỬ LÝ ĐĂNG KÝ
+function handleRegister() {
+  const ho = document.getElementById('regHo').value.trim();
+  const ten = document.getElementById('regTen').value.trim();
+  const email = document.getElementById('regEmail').value.trim();
+  const password = document.getElementById('regPassword').value;
+
+  // Kiểm tra rỗng
+  if (!email || !password) {
+    showNotification('Vui lòng nhập đầy đủ Email và Mật khẩu!');
+    return;
+  }
+
+  // Kiểm tra xem email này đã tồn tại trong "hệ thống" chưa
+  const taiKhoanTonTai = danhSachTaiKhoan.find(user => user.email === email);
+  if (taiKhoanTonTai) {
+    showNotification('Email này đã được đăng ký trước đó!');
+    return;
+  }
+
+  // Nếu hợp lệ thì thêm vào mảng và lưu vào localStorage
+  danhSachTaiKhoan.push({ ho, ten, email, password });
+  localStorage.setItem('hinaShopAccounts', JSON.stringify(danhSachTaiKhoan));
+
+  showNotification('Đăng ký tài khoản thành công!');
+  
+  // Tự động chuyển về tab đăng nhập sau 1.5s để user test luôn
+  setTimeout(() => {
+    switchTab('login');
+  }, 1500);
+}
+
+// 2. XỬ LÝ ĐĂNG NHẬP
+function handleLogin() {
+  const email = document.getElementById('loginEmail').value.trim();
+  const password = document.getElementById('loginPassword').value;
+
+  if (!email || !password) {
+    showNotification('Vui lòng nhập Email và Mật khẩu!');
+    return;
+  }
+
+  // Tìm tài khoản theo email nhập vào
+  const taiKhoan = danhSachTaiKhoan.find(user => user.email === email);
+
+  // CẢNH BÁO: Nếu không tìm thấy email
+  if (!taiKhoan) {
+    showNotification('Tài khoản này chưa được đăng ký!');
+    return;
+  }
+
+  // CẢNH BÁO: Nếu sai mật khẩu
+  if (taiKhoan.password !== password) {
+    showNotification('Mật khẩu không chính xác!');
+    return;
+  }
+
+  // Đăng nhập thành công
+  showNotification(`Đăng nhập thành công! Chào ${taiKhoan.ten}.`);
+  
+  // Đóng modal sau 1.5s
+  setTimeout(() => {
+    document.getElementById('modalOverlay').classList.remove('open');
+  }, 1500);
+}
+// ===== SCROLL TOP =====
+window.addEventListener('scroll', () => {
+  document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 300);
+});
+
+// ===== SEARCH =====
+document.getElementById('searchInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') showNotification('Đang tìm kiếm: ' + e.target.value);
+});
+
+// ===== HÀM LỌC SẢN PHẨM THEO DANH MỤC =====
+function filterByCategory(categoryName) {
+  // 1. Cập nhật tiêu đề của danh mục
+  document.getElementById('categoryTitle').textContent = categoryName;
+
+  // 2. Gộp tất cả các mảng sản phẩm lại để tìm kiếm/lọc cho dễ
+  const allProducts = [...newProducts, ...comingProducts, ...saleProducts];
+
+  // 3. Tiến hành lọc sản phẩm trùng khớp với tên danh mục được click
+  const filtered = allProducts.filter(p => p.category === categoryName);
+
+  // 4. Đổ dữ liệu đã lọc ra Grid (Tận dụng hàm renderCard có sẵn của bạn)
+  const container = document.getElementById('categoryProductsGrid');
+  
+  if (filtered.length === 0) {
+    container.innerHTML = `
+      <div style="grid-column: 1/-1; text-align: center; padding: 40px; color: #888;">
+        <i class="fa-regular fa-folder-open" style="font-size: 48px; margin-bottom: 16px;"></i>
+        <p>Hiện chưa có sản phẩm nào thuộc danh mục này.</p>
+      </div>`;
+  } else {
+    container.innerHTML = filtered.map(renderCard).join('');
+  }
+
+  // 5. Ẩn View trang chủ và hiển thị View danh mục lên
+  document.getElementById('homeView').style.display = 'none';
+  document.getElementById('categoryView').style.display = 'block';
+
+  // 6. Cuộn màn hình lên đầu trang mượt mà
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ===== HÀM QUAY LẠI TRANG CHỦ =====
+function showHomeView() {
+  document.getElementById('categoryView').style.display = 'none';
+  document.getElementById('homeView').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+// ===== KHO DỮ KIỆN CHO CÁC TRANG MENU CHỨC NĂNG =====
+const pageData = {
+  'lich-phat-hanh': {
+    title: '📅 Lịch Phát Hành Sách Mới',
+    content: `
+      <p style="margin-bottom: 20px; font-weight: bold; color: #e67e22;">Cập nhật lịch phát hành dự kiến tháng 05/2026 từ các Nhà xuất bản:</p>
+      <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+        <tr style="background: #f5efe6; text-align: left;">
+          <th style="padding: 12px; border: 1px solid #ddd;">Ngày phát hành</th>
+          <th style="padding: 12px; border: 1px solid #ddd;">Tựa tác phẩm</th>
+          <th style="padding: 12px; border: 1px solid #ddd;">Nhà Xuất Bản</th>
+          <th style="padding: 12px; border: 1px solid #ddd;">Ghi chú</th>
+        </tr>
+        <tr>
+          <td style="padding: 12px; border: 1px solid #ddd;">22/05/2026</td>
+          <td style="padding: 12px; border: 1px solid #ddd;"><strong>Frieren - Pháp Sư Tiễn Táng (Tập 14)</strong></td>
+          <td style="padding: 12px; border: 1px solid #ddd;">NXB Kim Đồng</td>
+          <td style="padding: 12px; border: 1px solid #ddd;"><span style="background:#e74c3c; color:white; padding:2px 6px; border-radius:3px; font-size:12px;">Hot</span> Bản giới hạn</td>
+        </tr>
+        <tr>
+          <td style="padding: 12px; border: 1px solid #ddd;">25/05/2026</td>
+          <td style="padding: 12px; border: 1px solid #ddd;"><strong>Hành Trình Của Elaina (Tập 17)</strong></td>
+          <td style="padding: 12px; border: 1px solid #ddd;">Hikari Light Novel</td>
+          <td style="padding: 12px; border: 1px solid #ddd;">Tặng kèm Bookmark</td>
+        </tr>
+        <tr>
+          <td style="padding: 12px; border: 1px solid #ddd;">29/05/2026</td>
+          <td style="padding: 12px; border: 1px solid #ddd;"><strong>Kagurabachi (Tập 5)</strong></td>
+          <td style="padding: 12px; border: 1px solid #ddd;">NXB Trẻ</td>
+          <td style="padding: 12px; border: 1px solid #ddd;">Bản Thường / Độc quyền</td>
+        </tr>
+      </table>
+    `
+  },
+  'thanh-vien': {
+    title: '👑 Đặc Quyền Thành Viên - Hina VIP Club',
+    content: `
+      <p>Chào mừng bạn đến với hệ thống cấp bậc thành viên của <strong>Hina Shop</strong>. Tích lũy chi tiêu ngay hôm nay để nhận những ưu đãi độc quyền dài hạn:</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+        <div style="background: #f9f9f9; padding: 20px; border-radius: 6px; border-left: 4px solid #7f8c8d;">
+          <h4 style="margin-top:0; color:#7f8c8d;">Cấp Bạc (Silver Member)</h4>
+          <p style="font-size:13px; margin-bottom:0;">• Điều kiện: Chi tiêu từ 1.000.000₫<br>• Ưu đãi: Giảm 2% cho mọi đơn hàng, tặng quà sinh nhật.</p>
+        </div>
+        <div style="background: #fcf8e3; padding: 20px; border-radius: 6px; border-left: 4px solid #f1c40f;">
+          <h4 style="margin-top:0; color:#d4ac0d;">Cấp Vàng (Gold Member)</h4>
+          <p style="font-size:13px; margin-bottom:0;">• Điều kiện: Chi tiêu từ 5.000.000₫<br>• Ưu đãi: Giảm 5% cho mọi đơn hàng, miễn phí vận chuyển toàn quốc.</p>
+        </div>
+        <div style="background: #f2dede; padding: 20px; border-radius: 6px; border-left: 4px solid #c0392b;">
+          <h4 style="margin-top:0; color:#c0392b;">Cấp Kim Cương (Platinum)</h4>
+          <p style="font-size:13px; margin-bottom:0;">• Điều kiện: Chi tiêu từ 10.000.000₫<br>• Ưu đãi: Giảm 8% mọi đơn hàng, quyền đặt trước các boxset giới hạn trước 48 giờ.</p>
+        </div>
+      </div>
+    `
+  },
+  'doi-diem': {
+    title: '🎁 Đổi Điểm Thưởng - Nhận Quà Xịn',
+    content: `
+      <p>Với mỗi đơn hàng hoàn tất, bạn sẽ tích lũy được điểm thưởng <strong>Hina Point (YP)</strong> tỉ lệ quy đổi: 10.000₫ = 1 YP.</p>
+      <h3 style="margin-top: 25px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Quà tặng khả dụng hiện tại:</h3>
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px dashed #eee;">
+        <span><strong>Móc khóa Acrylic Frieren chibi</strong> (Chính hãng)</span>
+        <button style="background: #c0392b; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;" onclick="showNotification('Bạn không đủ điểm thưởng để đổi!')">50 YP</button>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px dashed #eee;">
+        <span><strong>Voucher giảm giá trực tiếp 50.000₫</strong> cho đơn hàng kế tiếp</span>
+        <button style="background: #c0392b; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;" onclick="showNotification('Bạn không đủ điểm thưởng để đổi!')">100 YP</button>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px dashed #eee;">
+        <span><strong>Poster tráng gương khổ A3 Kimetsu no Yaiba</strong></span>
+        <button style="background: #c0392b; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;" onclick="showNotification('Bạn không đủ điểm thưởng để đổi!')">120 YP</button>
+      </div>
+    `
+  },
+  'tin-tuc': {
+    title: '📰 Tin Tức & Sự Kiện Manga / Light Novel',
+    content: `
+      <div style="margin-bottom: 25px;">
+        <h4 style="margin-bottom: 5px; color:#2c3e50;"><a href="#" style="text-decoration:none; color:inherit;">[Sự Kiện] Ngày Hội Manga Festival 2026 sắp diễn ra tại TP.HCM</a></h4>
+        <small style="color:#999;">Cập nhật ngày: 15/05/2026</small>
+        <p style="margin-top: 5px; font-size:14px;">Hina Shop hân hạnh đồng hành cùng lễ hội truyện tranh lớn nhất mùa hè năm nay. Gian hàng của chúng tôi sẽ mang lại hàng nghìn tựa sách giảm giá sâu kèm các phần quà lưu niệm limited độc quyền...</p>
+      </div>
+      <div style="margin-bottom: 25px;">
+        <h4 style="margin-bottom: 5px; color:#2c3e50;"><a href="#" style="text-decoration:none; color:inherit;">[Bảng Xếp Hạng] Top 5 Light Novel bán chạy nhất nửa đầu năm 2026</a></h4>
+        <small style="color:#999;">Cập nhật ngày: 10/05/2026</small>
+        <p style="margin-top: 5px; font-size:14px;">Vượt qua hàng loạt đối thủ nặng ký, tập mới nhất của tác phẩm đình đám đã chính thức thiết lập kỷ lục doanh thu mới tại hệ thống bán lẻ của Hina Shop...</p>
+      </div>
+    `
+  },
+  'huong-dan': {
+    title: '📖 Hướng Dẫn Mua Hàng & Thanh Toán',
+    content: `
+      <div style="background: #fcfcfc; padding: 20px; border: 1px solid #e1e1e1; border-radius: 4px;">
+        <p><strong>Bước 1: Chuyển đổi danh mục sản phẩm</strong><br>Sử dụng thanh "Danh Mục" dynamic để lựa chọn các thể loại sách yêu thích của bạn.</p>
+        <p><strong>Bước 2: Thêm hàng vào giỏ</strong><br>Nhấn nút <em>"Thêm Vào Giỏ"</em>, biểu tượng giỏ hàng góc trên bên phải sẽ tự động nhảy số lượng cập nhật tương ứng.</p>
+        <p><strong>Bước 3: Đăng nhập / Đăng ký hệ thống</strong><br>Nhấn nút <em>"Tài Khoản"</em> để thực hiện xác thực bảo mật trước khi thanh toán. Hệ thống lưu tài khoản cục bộ thông minh.</p>
+        <p><strong>Bước 4: Xác nhận thanh toán</strong><br>Mở Giỏ hàng, bấm <em>"Thanh Toán Ngay"</em> để kết nối cổng vận chuyển (VNPost, GrabExpress, GHN).</p>
+      </div>
+    `
+  },
+  've-chung-toi': {
+    title: '⛩️ Về Chúng Tôi - Hina 雪 Shop',
+    content: `
+      <p>Khởi nguồn từ niềm đam mê cháy bỏng với nền văn hóa đại chúng Nhật Bản, <strong>Hina Shop</strong> (Hina Shop Project) tự hào là không gian mua sắm trực tuyến chuyên nghiệp dành riêng cho cộng đồng Otaku và những người yêu mến Manga, Light Novel, Artbook tại Việt Nam.</p>
+      <p>Chúng tôi cam kết cung cấp 100% các ấn phẩm chính hãng, chất lượng giấy cao cấp từ những đối tác xuất bản hàng đầu như NXB Kim Đồng, NXB Trẻ, IPM, Amak, Hikari... Bán hàng bằng cả trái tim, vì một cộng đồng yêu truyện văn minh và phát triển vững mạnh!</p>
+    `
+  }
+};
+
+// ===== HÀM ĐIỀU HƯỚNG HIỂN THỊ TRANG CHỨC NĂNG =====
+function showPageView(pageKey) {
+  const page = pageData[pageKey];
+  if (!page) return;
+
+  // 1. Đổ dữ liệu động vào trang
+  document.getElementById('pageTitle').innerHTML = page.title;
+  document.getElementById('pageContent').innerHTML = page.content;
+
+  // 2. Ẩn toàn bộ các View khác, chỉ hiển thị đúng #pageView
+  const homeView = document.getElementById('homeView');
+  const categoryView = document.getElementById('categoryView');
+  const pageView = document.getElementById('pageView');
+
+  if (homeView) homeView.style.display = 'none';
+  if (categoryView) categoryView.style.display = 'none';
+  if (pageView) pageView.style.display = 'block';
+
+  // 3. Cuộn mượt màn hình lên đầu trang
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ===== HÀM QUAY LẠI TRANG CHỦ TỔNG HỢP =====
+function showHomeViewAll() {
+  document.getElementById('pageView').style.display = 'none';
+  if (document.getElementById('categoryView')) document.getElementById('categoryView').style.display = 'none';
+  document.getElementById('homeView').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function filterByCategory(categoryName) {
+  // Thêm dòng này vào ngay trong hàm filterByCategory (đoạn xử lý ẩn/hiện view):
+  const pageView = document.getElementById('pageView');
+  if (pageView) pageView.style.display = 'none'; // Thêm dòng này vào hàm filterByCategory cũ
+  // 1. Cập nhật tiêu đề hiển thị trên giao diện danh mục
+  const titleEl = document.getElementById('categoryTitle');
+  if (titleEl) titleEl.textContent = categoryName;
+
+  // 2. Gộp toàn bộ kho dữ liệu
+  const allProducts = [...newProducts, ...comingProducts, ...saleProducts];
+
+  // 3. Tiến hành lọc: Hỗ trợ tìm kiếm tương đối (Ví dụ: "Hàn Quốc" sẽ gom luôn cả "Manhwa Hàn Quốc")
+  const filtered = allProducts.filter(p => {
+    if (!p.category) return false;
+    return p.category.toLowerCase().includes(categoryName.toLowerCase()) || 
+           categoryName.toLowerCase().includes(p.category.toLowerCase());
+  });
+
+  // 4. Đổ dữ liệu ra lưới hiển thị danh mục
+  const container = document.getElementById('categoryProductsGrid');
+  if (container) {
+    if (filtered.length === 0) {
+      container.innerHTML = `
+        <div style="grid-column: 1/-1; text-align: center; padding: 60px 20px; color: #888;">
+          <i class="fa-regular fa-folder-open" style="font-size: 50px; margin-bottom: 15px; color: #ccc;"></i>
+          <p style="font-size: 16px;">Hiện chưa có sản phẩm nào thuộc danh mục <strong>"${categoryName}"</strong>.</p>
+        </div>`;
+    } else {
+      container.innerHTML = filtered.map(renderCard).join('');
+    }
+  }
+
+  // 5. Thao tác ẩn/hiện màn hình (Chuyển đổi View)
+  const homeView = document.getElementById('homeView');
+  const categoryView = document.getElementById('categoryView');
+  
+  if (homeView && categoryView) {
+    homeView.style.display = 'none';
+    categoryView.style.display = 'block';
+  }
+
+  // 6. Cuộn mượt màn hình lên trên cùng
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
